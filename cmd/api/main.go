@@ -8,6 +8,7 @@ import (
 
 type config struct {
 	port int
+	env  string
 }
 
 type application struct {
@@ -19,6 +20,7 @@ func main() {
 	var cfg config
 
 	flag.IntVar(&cfg.port, "port", 4000, "api server port")
+	flag.StringVar(&cfg.env, "environment", "development", "Application environment")
 
 	flag.Parse()
 
